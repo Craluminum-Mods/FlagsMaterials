@@ -1,3 +1,4 @@
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 
@@ -30,7 +31,7 @@ namespace CFlag
         {
             handling = EnumHandling.PreventDefault;
             var byEntity = byPlayer.Entity;
-            if (blockSel != null)
+            if (blockSel != null && byPlayer.Entity.Controls.Sprint)
             {
                 byEntity.World.RegisterCallbackUnique(tryFlipFlagUpwards, blockSel.Position, 500);
             }
@@ -50,5 +51,25 @@ namespace CFlag
                 worldAccessor.RegisterCallbackUnique(tryFlipFlagUpwards, upPos, 500);
             }
         }
+
+        // public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
+        // {
+        //     handling = EnumHandling.PassThrough;
+        //     return new WorldInteraction[]
+        //     {
+        //         new WorldInteraction()
+        //         {
+        //             ActionLangCode = "cflag-pole-interact",
+        //             HotKeyCode = "sprint",
+        //             MouseButton = EnumMouseButton.Right
+        //         },
+        //         new WorldInteraction()
+        //         {
+        //             ActionLangCode = "cflag-pole-add",
+        //             HotKeyCode = null,
+        //             MouseButton = EnumMouseButton.Right
+        //         }
+        //     };
+        // }
     }
 }
