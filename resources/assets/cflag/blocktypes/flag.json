@@ -1,0 +1,65 @@
+{
+  "code": "flag",
+  "blockmaterial": "Cloth",
+	"creativeinventory": {
+		"general": [
+			"*"
+		]
+	},
+  "behaviors": [
+    {
+      "name": "BlockFlag"
+    },
+    {
+      "name": "BlockFlag"
+    }
+  ],
+  "storageFlags": 257,
+  "heldRightTpIdleAnimation": "holdinglanternrighthand",
+  "heldLeftTpIdleAnimation": "holdinglanternlefthand",
+  "maxStackSize": 8,
+  "shape": { "base": "block/flag" },
+  "lightAbsorption": 0,
+  "resistance": 0.5,
+  "sideopaque": { "all": false },
+  "sidesolid": { "all": false },
+  "collisionBox": null,
+  "selectionBox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0.4375,
+    "x2": 1,
+    "y2": 1,
+    "z2": 0.5625,
+    "rotateYByType": { "@.*-(east|west)": 90 }
+  },
+  "sounds": {
+    "place": "game:block/cloth",
+    "break": "game:block/cloth",
+    "hit": "game:block/cloth",
+    "walk": "game:walk/cloth"
+  },
+  "tpOffHandTransform": {
+    "translation": { "x": -1.4, "y": -1, "z": -0.93 },
+    "rotation": { "x": 0, "y": 0, "z": -90 },
+    "scale": 0.5
+  },
+  "tpHandTransform": {
+    "translation": { "x": -1.55, "y": -1, "z": -1 },
+    "rotation": { "x": 0, "y": 0, "z": -90 },
+    "scale": 0.5
+  },
+  "fpHandTransform": {
+    "rotation": { "x": 0, "y": 45, "z": 0 }
+  },
+  "guiTransform": {
+    "translation": { "x": -8, "y": 3, "z": 0 },
+    "scale": 1.4
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 0, "y": -45, "z": 0 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "scale": 6
+  }
+}
