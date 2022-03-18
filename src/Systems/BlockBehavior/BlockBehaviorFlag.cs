@@ -1,4 +1,3 @@
-using System;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 
@@ -8,6 +7,23 @@ namespace CFlag
     {
         public BlockBehaviorFlag(Block block) : base(block)
         {
+        }
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref EnumHandling handling, ref string failureCode)
+        {
+            handling = EnumHandling.PreventDefault;
+            BlockPos pos = blockSel.Position.AddCopy(blockSel.Face.Opposite);
+            Block attachingBlock = world.BlockAccessor.GetBlock(pos);
+            if (attachingBlock.HasBehavior<BlockBehaviorPole>())
+            {
+                // Might need a little extra logic for handling different flag facing
+                world.BlockAccessor.ExchangeBlock(block.Id, pos);
+                return true;
+            }
+            else
+            {
+                failureCode = "flagneedspole";
+                return false;
+            }
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
