@@ -28,12 +28,13 @@ namespace CFlag
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
         {
+            handling = EnumHandling.PreventDefault;
             var byEntity = byPlayer.Entity;
             if (blockSel != null)
             {
                 byEntity.World.RegisterCallbackUnique(tryFlipFlagUpwards, blockSel.Position, 500);
             }
-            return base.OnBlockInteractStart(world, byPlayer, blockSel, ref handling);
+            return true;
         }
 
         private void tryFlipFlagUpwards(IWorldAccessor worldAccessor, BlockPos pos, float dt)
