@@ -9,9 +9,6 @@
   "behaviors": [
     {
       "name": "BlockFlag"
-    },
-    {
-      "name": "BlockFlag"
     }
   ],
   "storageFlags": 257,

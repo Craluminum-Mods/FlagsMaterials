@@ -12,19 +12,22 @@ namespace CFlag
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
         {
+            handling = EnumHandling.PreventDefault;
             var byEntity = byPlayer.Entity;
             if (blockSel != null && byPlayer.Entity.Controls.Sprint)
             {
                 var blockAccessor = world.BlockAccessor;
                 var upPos = blockSel.Position.Copy();
-                while(blockAccessor.GetBlock(upPos).HasBehavior<BlockBehaviorPole>()){
+                while (blockAccessor.GetBlock(upPos).HasBehavior<BlockBehaviorPole>())
+                {
                     upPos = upPos.Up();
-                    if(blockAccessor.GetBlock(upPos).HasBehavior<BlockBehaviorFlag>()){
+                    if (blockAccessor.GetBlock(upPos).HasBehavior<BlockBehaviorFlag>())
+                    {
                         world.RegisterCallbackUnique(tryFlipFlagDownwards, upPos, 500);
                     }
                 }
             }
-            return base.OnBlockInteractStart(world, byPlayer, blockSel, ref handling);
+            return true;
         }
 
         private void tryFlipFlagDownwards(IWorldAccessor worldAccessor, BlockPos pos, float dt)
