@@ -1,4 +1,6 @@
 {
-  "game:cflag-pole-interact": "Raise / lower a flag",
-  "game:cflag-pole-add": "Add a flag to empty pole"
+  "game:cflag-pole-lowerflag": "Lower a flag",
+  "game:cflag-pole-riseflag": "Rise a flag",
+  "game:cflag-pole-addflag": "Add a flag",
+  "game:cflag-flag-polerequired": "Flag needs a pole"
 }

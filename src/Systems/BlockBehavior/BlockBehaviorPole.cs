@@ -44,24 +44,24 @@ namespace CFlag
             }
         }
 
-        // public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
-        // {
-        //     handling = EnumHandling.PassThrough;
-        //     return new WorldInteraction[]
-        //     {
-        //         new WorldInteraction()
-        //         {
-        //             ActionLangCode = "cflag-pole-interact",
-        //             HotKeyCode = "sprint",
-        //             MouseButton = EnumMouseButton.Right
-        //         },
-        //         new WorldInteraction()
-        //         {
-        //             ActionLangCode = "cflag-pole-add",
-        //             HotKeyCode = null,
-        //             MouseButton = EnumMouseButton.Right
-        //         }
-        //     };
-        // }
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
+        {
+            handling = EnumHandling.PassThrough;
+            return new WorldInteraction[]
+            {
+                new WorldInteraction()
+                {
+                    ActionLangCode = "cflag-pole-addflag",
+                    HotKeyCode = "sneak",
+                    MouseButton = EnumMouseButton.Right
+                },
+                new WorldInteraction()
+                {
+                    ActionLangCode = "cflag-pole-lowerflag",
+                    HotKeyCode = "sprint",
+                    MouseButton = EnumMouseButton.Right
+                }
+            };
+        }
     }
 }

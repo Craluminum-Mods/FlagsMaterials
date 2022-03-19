@@ -22,7 +22,7 @@ namespace CFlag
             }
             else
             {
-                failureCode = "flagneedspole";
+                failureCode = "cflag-flag-polerequired";
                 return false;
             }
         }
@@ -52,24 +52,18 @@ namespace CFlag
             }
         }
 
-        // public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
-        // {
-        //     handling = EnumHandling.PassThrough;
-        //     return new WorldInteraction[]
-        //     {
-        //         new WorldInteraction()
-        //         {
-        //             ActionLangCode = "cflag-pole-interact",
-        //             HotKeyCode = "sprint",
-        //             MouseButton = EnumMouseButton.Right
-        //         },
-        //         new WorldInteraction()
-        //         {
-        //             ActionLangCode = "cflag-pole-add",
-        //             HotKeyCode = null,
-        //             MouseButton = EnumMouseButton.Right
-        //         }
-        //     };
-        // }
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
+        {
+            handling = EnumHandling.PassThrough;
+            return new WorldInteraction[]
+            {
+                new WorldInteraction()
+                {
+                    ActionLangCode = "cflag-pole-riseflag",
+                    HotKeyCode = "sprint",
+                    MouseButton = EnumMouseButton.Right
+                }
+            };
+        }
     }
 }
