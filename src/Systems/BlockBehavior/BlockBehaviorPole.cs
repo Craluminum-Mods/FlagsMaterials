@@ -51,14 +51,14 @@ namespace CFlag
             {
                 new WorldInteraction()
                 {
-                    ActionLangCode = "cflag-pole-addflag",
-                    HotKeyCode = "sneak",
+                    ActionLangCode = "cflag-pole-downwards",
+                    HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right
                 },
                 new WorldInteraction()
                 {
-                    ActionLangCode = "cflag-pole-lowerflag",
-                    HotKeyCode = "sprint",
+                    ActionLangCode = "cflag-pole-addflag",
+                    HotKeyCode = "sneak",
                     MouseButton = EnumMouseButton.Right
                 }
             };

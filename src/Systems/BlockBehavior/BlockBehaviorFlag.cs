@@ -39,7 +39,7 @@ namespace CFlag
                 }
                 else
                 {
-                    if (byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)))
+                    if (byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)) && byPlayer.Entity.Controls.Sneak)
                     {
                         var pole = world.BlockAccessor.GetBlock(new AssetLocation("cflag", "pole"));
                         world.BlockAccessor.ExchangeBlock(pole.Id, blockSel.Position);
@@ -70,8 +70,14 @@ namespace CFlag
             {
                 new WorldInteraction()
                 {
-                    ActionLangCode = "cflag-pole-riseflag",
+                    ActionLangCode = "cflag-pole-upwards",
                     HotKeyCode = "sprint",
+                    MouseButton = EnumMouseButton.Right
+                },
+                new WorldInteraction()
+                {
+                    ActionLangCode = "cflag-flag-pickup",
+                    HotKeyCode = "sneak",
                     MouseButton = EnumMouseButton.Right
                 }
             };
