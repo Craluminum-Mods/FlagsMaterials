@@ -1,6 +1,6 @@
 {
-  "game:cflag-pole-lowerflag": "Lower a flag",
-  "game:cflag-pole-riseflag": "Rise a flag",
+  "game:cflag-pole-downwards": "Lower a flag",
+  "game:cflag-pole-upwards": "Raise a flag",
   "game:cflag-pole-addflag": "Add a flag",
   "game:placefailure-cflag-flag-polerequired": "Flag needs a pole",
   "game:cflag-flag-pickup": "Remove a flag"
