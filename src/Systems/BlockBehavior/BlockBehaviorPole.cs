@@ -10,6 +10,26 @@ namespace CFlag
         {
         }
 
+        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref EnumHandling handling, ref string failureCode)
+        {
+            if (byPlayer.Entity.Controls.Sneak)
+            {
+                var pos = blockSel.Face == BlockFacing.UP ? blockSel.Position.Copy() : blockSel.Position.AddCopy(blockSel.Face.Opposite);
+                var attachingBlock = world.BlockAccessor.GetBlock(pos);
+                while (attachingBlock.HasBehavior<BlockBehaviorPole>() || attachingBlock.HasBehavior<BlockBehaviorFlag>())
+                {
+                    pos = pos.Up();
+                    attachingBlock = world.BlockAccessor.GetBlock(pos);
+                    if (attachingBlock.Id == 0)
+                    {
+                        blockSel.Position = pos;
+                        return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref handling, ref failureCode);
+                    }
+                }
+            }
+            return base.TryPlaceBlock(world, byPlayer, itemstack, blockSel, ref handling, ref failureCode);
+        }
+
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
         {
             handling = EnumHandling.PreventDefault;
