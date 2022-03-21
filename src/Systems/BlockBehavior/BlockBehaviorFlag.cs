@@ -31,9 +31,20 @@ namespace CFlag
         {
             handling = EnumHandling.PreventDefault;
             var byEntity = byPlayer.Entity;
-            if (blockSel != null && byPlayer.Entity.Controls.Sprint)
+            if (blockSel != null)
             {
-                byEntity.World.RegisterCallbackUnique(tryFlipFlagUpwards, blockSel.Position, 500);
+                if (byPlayer.Entity.Controls.Sprint)
+                {
+                    byEntity.World.RegisterCallbackUnique(tryFlipFlagUpwards, blockSel.Position, 500);
+                }
+                else
+                {
+                    if (byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)))
+                    {
+                        var pole = world.BlockAccessor.GetBlock(new AssetLocation("cflag", "pole"));
+                        world.BlockAccessor.ExchangeBlock(pole.Id, blockSel.Position);
+                    }
+                }
             }
             return true;
         }
