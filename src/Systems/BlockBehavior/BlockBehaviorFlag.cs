@@ -14,20 +14,17 @@ namespace CFlag
             handling = EnumHandling.PreventDefault;
             BlockPos pos = blockSel.Position.AddCopy(blockSel.Face.Opposite);
             Block attachingBlock = world.BlockAccessor.GetBlock(pos);
-            if (attachingBlock.HasBehavior<BlockBehaviorPole>())
+            if (attachingBlock.HasBehavior<BlockBehaviorPole>() && byPlayer.Entity.Controls.Sneak)
             {
                 var flagBlock = world.BlockAccessor.GetBlock(block.CodeWithVariant("side", blockSel.Face.ToString().ToLower()));
                 if (flagBlock != null)
                 {
                     world.BlockAccessor.ExchangeBlock(flagBlock.Id, pos);
+                    return true;
                 }
-                return true;
             }
-            else
-            {
-                failureCode = "cflag-flag-polerequired";
-                return false;
-            }
+            failureCode = "cflag-flag-polerequired";
+            return false;
         }
 
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
@@ -39,6 +36,7 @@ namespace CFlag
                 if (byPlayer.Entity.Controls.Sprint)
                 {
                     byEntity.World.RegisterCallbackUnique(tryFlipFlagUpwards, blockSel.Position, 500);
+                    return true;
                 }
                 else
                 {
@@ -46,10 +44,11 @@ namespace CFlag
                     {
                         var pole = world.BlockAccessor.GetBlock(new AssetLocation("cflag", "pole"));
                         world.BlockAccessor.ExchangeBlock(pole.Id, blockSel.Position);
+                        return true;
                     }
                 }
             }
-            return true;
+            return false;
         }
 
         private void tryFlipFlagUpwards(IWorldAccessor worldAccessor, BlockPos pos, float dt)

@@ -3,7 +3,7 @@
   "blockmaterial": "Cloth",
   "variantgroups": [{ "code": "side", "loadFromProperties": "abstract/horizontalorientation" }],
   "creativeinventory": { "general": ["*"] },
-  "behaviors": [{ "name": "BlockFlag" }, { "name": "HorizontalOrientable" }, { "name": "Unplaceable" }],
+  "behaviors": [{ "name": "BlockFlag" }],
   "storageFlags": 257,
   "heldRightTpIdleAnimation": "holdinglanternrighthand",
   "heldLeftTpIdleAnimation": "holdinglanternlefthand",
