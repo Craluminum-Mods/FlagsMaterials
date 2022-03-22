@@ -21,7 +21,7 @@
     "x2": 1,
     "y2": 1,
     "z2": 0.5625,
-    "rotateYByType": { "@.*-(east|west)": 90 }
+    "rotateYByType": { "@.*-(north|south)": 90 }
   },
   "sounds": {
     "place": "game:block/cloth",
