@@ -16,8 +16,11 @@ namespace CFlag
             Block attachingBlock = world.BlockAccessor.GetBlock(pos);
             if (attachingBlock.HasBehavior<BlockBehaviorPole>())
             {
-                // Might need a little extra logic for handling different flag facing
-                world.BlockAccessor.ExchangeBlock(block.Id, pos);
+                var flagBlock = world.BlockAccessor.GetBlock(block.CodeWithVariant("side", blockSel.Face.ToString().ToLower()));
+                if (flagBlock != null)
+                {
+                    world.BlockAccessor.ExchangeBlock(flagBlock.Id, pos);
+                }
                 return true;
             }
             else
