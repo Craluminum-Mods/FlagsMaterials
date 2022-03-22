@@ -12,7 +12,7 @@ namespace CFlag
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref EnumHandling handling, ref string failureCode)
         {
-            if (byPlayer.Entity.Controls.Sneak)
+            if (byPlayer.Entity.Controls.Sneak && !byPlayer.Entity.Controls.Sprint)
             {
                 var pos = blockSel.Face == BlockFacing.UP ? blockSel.Position.Copy() : blockSel.Position.AddCopy(blockSel.Face.Opposite);
                 var attachingBlock = world.BlockAccessor.GetBlock(pos);
@@ -34,7 +34,7 @@ namespace CFlag
         {
             handling = EnumHandling.PreventDefault;
             var byEntity = byPlayer.Entity;
-            if (blockSel != null && byPlayer.Entity.Controls.Sprint)
+            if (byPlayer.Entity.Controls.Sprint && !byPlayer.Entity.Controls.Sneak)
             {
                 var blockAccessor = world.BlockAccessor;
                 var upPos = blockSel.Position.Copy();
@@ -46,8 +46,36 @@ namespace CFlag
                         world.RegisterCallbackUnique(tryFlipFlagDownwards, upPos, 500);
                     }
                 }
+                return true;
             }
-            return true;
+            else if (!byPlayer.Entity.Controls.Sprint && !byPlayer.Entity.Controls.Sneak)
+            {
+                // should not need a null check here, player should always have hands
+                if ((byEntity.RightHandItemSlot.Empty
+                        || byEntity.RightHandItemSlot.Itemstack.Block?.HasBehavior<BlockBehaviorPole>() == true)
+                    // if we successfully give the player the lowest pole, we can start the lowering part
+                    && byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)))
+                {
+                    // exchanging the current plockpos with blockid 0 transforms the block into air
+                    world.BlockAccessor.ExchangeBlock(0, blockSel.Position);
+                    var polePos = blockSel.Position.UpCopy();
+                    var poleBlock = world.BlockAccessor.GetBlock(polePos);
+                    // while the upper block is either a flag or a pole we want to continue moving down the pole
+                    while (poleBlock.HasBehavior<BlockBehaviorPole>() || poleBlock.HasBehavior<BlockBehaviorFlag>())
+                    {
+                        // duplicate the current block to the lower position
+                        world.BlockAccessor.ExchangeBlock(poleBlock.Id, polePos.DownCopy());
+                        // replace the current block by thin air
+                        world.BlockAccessor.ExchangeBlock(0, polePos);
+
+                        // go to the upper block
+                        polePos = polePos.Up();
+                        poleBlock = world.BlockAccessor.GetBlock(polePos);
+                    }
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void tryFlipFlagDownwards(IWorldAccessor worldAccessor, BlockPos pos, float dt)
