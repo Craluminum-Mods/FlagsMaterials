@@ -1,21 +1,14 @@
 {
   "code": "flag",
   "blockmaterial": "Cloth",
-	"creativeinventory": {
-		"general": [
-			"*"
-		]
-	},
-  "behaviors": [
-    {
-      "name": "BlockFlag"
-    }
-  ],
+  "variantgroups": [{ "code": "side", "loadFromProperties": "abstract/horizontalorientation" }],
+  "creativeinventory": { "general": ["*"] },
+  "behaviors": [{ "name": "BlockFlag" }, { "name": "HorizontalOrientable" }, { "name": "Unplaceable" }],
   "storageFlags": 257,
   "heldRightTpIdleAnimation": "holdinglanternrighthand",
   "heldLeftTpIdleAnimation": "holdinglanternlefthand",
   "maxStackSize": 8,
-  "shape": { "base": "block/flag" },
+  "shape": { "base": "block/flag", "rotateYByType": { "*-east": 180, "*-south": 90, "*-north": -90 } },
   "lightAbsorption": 0,
   "resistance": 0.5,
   "sideopaque": { "all": false },
