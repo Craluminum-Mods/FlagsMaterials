@@ -42,7 +42,7 @@ namespace CFlag
                 }
                 else
                 {
-                    if (byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)) && byPlayer.Entity.Controls.Sneak)
+                    if (byPlayer.Entity.Controls.Sneak && byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)))
                     {
                         var pole = world.BlockAccessor.GetBlock(new AssetLocation("cflag", "pole"));
                         world.BlockAccessor.ExchangeBlock(pole.Id, blockSel.Position);
