@@ -5,6 +5,7 @@
   "flag-pickup": "Снять флаг",
   "pole-addflag": "Добавить флаг",
   "pole-downwards": "Опустить флаг",
+  "pole-extend": "Удлинить фланшток",
   "pole-pickup": "Убрать флашток",
   "pole-upwards": "Поднять флаг",
   "game:placefailure-cflag-polerequired": "Флагу нужен флагшток",

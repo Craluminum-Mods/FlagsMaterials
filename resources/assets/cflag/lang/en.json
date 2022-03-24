@@ -2,9 +2,10 @@
   "game:tabname-cflagm": "Flags - Materials",
 
   "block-pole": "Flagpole",
-  "flag-pickup": "Remove a flag",
+  "flag-pickup": "Remove the flag",
   "pole-addflag": "Add a flag",
   "pole-downwards": "Lower a flag",
+  "pole-extend": "Extend a pole",
   "pole-pickup": "Remove a pole",
   "pole-upwards": "Raise a flag",
   "game:placefailure-cflag-polerequired": "Flag needs a pole",

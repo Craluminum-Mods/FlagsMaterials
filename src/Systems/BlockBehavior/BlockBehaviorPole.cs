@@ -37,6 +37,12 @@ namespace CFlag
                 return new WorldInteraction[] {
                     new WorldInteraction()
                     {
+                        ActionLangCode = "cflag:pole-downwards",
+                        HotKeyCode = "sprint",
+                        MouseButton = EnumMouseButton.Right
+                    },
+                    new WorldInteraction()
+                    {
                         ActionLangCode = "cflag:pole-addflag",
                         HotKeyCode = "sneak",
                         MouseButton = EnumMouseButton.Right,
@@ -44,16 +50,23 @@ namespace CFlag
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "cflag:pole-downwards",
-                        HotKeyCode = "sprint",
-                        MouseButton = EnumMouseButton.Right
+                        ActionLangCode = "cflag:pole-pickup",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true
                     },
                     new WorldInteraction()
                     {
                         ActionLangCode = "cflag:pole-pickup",
                         MouseButton = EnumMouseButton.Right,
-                        RequireFreeHand = true
-                    }
+                        Itemstacks = new ItemStack[] { new ItemStack(capi.World.GetBlock(new AssetLocation("cflag", "pole"))) }
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "cflag:pole-extend",
+                        HotKeyCode = "sneak",
+                        MouseButton = EnumMouseButton.Right,
+                        Itemstacks = new ItemStack[] { new ItemStack(capi.World.GetBlock(new AssetLocation("cflag", "pole"))) }
+                    },
                 };
             });
         }

@@ -89,7 +89,14 @@ namespace CFlag
                     HotKeyCode = "sneak",
                     MouseButton = EnumMouseButton.Right,
                     RequireFreeHand = true
-                }
+                },
+                new WorldInteraction()
+                {
+                    ActionLangCode = "cflag:pole-extend",
+                    HotKeyCode = "sneak",
+                    MouseButton = EnumMouseButton.Right,
+                    Itemstacks = new ItemStack[] { new ItemStack(world.GetBlock(new AssetLocation("cflag", "pole"))) }
+                },
             };
         }
     }
