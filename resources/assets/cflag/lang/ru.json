@@ -1,6 +1,13 @@
 {
   "game:tabname-cflagm": "Флаги - Материалы",
 
+  "block-pole": "Флагшток",
+  "flag-pickup": "Снять флаг",
+  "pole-addflag": "Добавить флаг",
+  "pole-downwards": "Опустить флаг",
+  "pole-pickup": "Убрать флашток",
+  "pole-upwards": "Поднять флаг",
+  "game:placefailure-cflag-polerequired": "Флагу нужен флагшток",
   "item-clothp-20-black": "Кусок черной ткани (1/20)",
   "item-clothp-20-blue": "Кусок синей ткани (1/20)",
   "item-clothp-20-brown": "Кусок коричневой ткани (1/20)",

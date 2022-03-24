@@ -1,5 +1,6 @@
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 
 namespace CFlag
@@ -23,7 +24,7 @@ namespace CFlag
                     return true;
                 }
             }
-            failureCode = "cflag-flag-polerequired";
+            failureCode = "cflag-polerequired";
             return false;
         }
 
