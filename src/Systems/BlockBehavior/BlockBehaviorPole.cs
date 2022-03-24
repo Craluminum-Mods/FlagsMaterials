@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Util;
 
 namespace CFlag
 {
@@ -8,6 +10,57 @@ namespace CFlag
     {
         public BlockBehaviorPole(Block block) : base(block)
         {
+        }
+
+        WorldInteraction[] interactions;
+
+        public override void OnLoaded(ICoreAPI api)
+        {
+            base.OnLoaded(api);
+
+            if (api.Side != EnumAppSide.Client) return;
+            ICoreClientAPI capi = api as ICoreClientAPI;
+
+            interactions = ObjectCacheUtil.GetOrCreate(api, "flagpoleInteractions", () =>
+            {
+                List<ItemStack> canAddFlagStacks = new List<ItemStack>();
+
+                foreach (CollectibleObject obj in api.World.Collectibles)
+                {
+                    if (obj is Block && (obj as Block).HasBehavior<BlockBehaviorFlag>())
+                    {
+                        List<ItemStack> stacks = obj.GetHandBookStacks(capi);
+                        if (stacks != null) canAddFlagStacks.AddRange(stacks);
+                    }
+                }
+
+                return new WorldInteraction[] {
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "cflag:pole-addflag",
+                        HotKeyCode = "sneak",
+                        MouseButton = EnumMouseButton.Right,
+                        Itemstacks = canAddFlagStacks.ToArray()
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "cflag:pole-downwards",
+                        HotKeyCode = "sprint",
+                        MouseButton = EnumMouseButton.Right
+                    },
+                    new WorldInteraction()
+                    {
+                        ActionLangCode = "cflag:pole-pickup",
+                        MouseButton = EnumMouseButton.Right,
+                        RequireFreeHand = true
+                    }
+                };
+            });
+        }
+
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
+        {
+            return interactions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer, ref handling));
         }
 
         public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref EnumHandling handling, ref string failureCode)
@@ -82,31 +135,6 @@ namespace CFlag
                 blockAccessor.ExchangeBlock(flag.Id, downPos);
                 worldAccessor.RegisterCallbackUnique(tryFlipFlagDownwards, downPos, 500);
             }
-        }
-
-        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer, ref EnumHandling handling)
-        {
-            handling = EnumHandling.PassThrough;
-            return new WorldInteraction[]
-            {
-                new WorldInteraction()
-                {
-                    ActionLangCode = "cflag:pole-downwards",
-                    HotKeyCode = "sprint",
-                    MouseButton = EnumMouseButton.Right
-                },
-                new WorldInteraction()
-                {
-                    ActionLangCode = "cflag:pole-addflag",
-                    HotKeyCode = "sneak",
-                    MouseButton = EnumMouseButton.Right
-                },
-                new WorldInteraction()
-                {
-                    ActionLangCode = "cflag:pole-pickup",
-                    MouseButton = EnumMouseButton.Right
-                }
-            };
         }
     }
 }

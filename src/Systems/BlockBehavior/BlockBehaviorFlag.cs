@@ -87,7 +87,8 @@ namespace CFlag
                 {
                     ActionLangCode = "cflag:flag-pickup",
                     HotKeyCode = "sneak",
-                    MouseButton = EnumMouseButton.Right
+                    MouseButton = EnumMouseButton.Right,
+                    RequireFreeHand = true
                 }
             };
         }
