@@ -40,7 +40,8 @@ namespace CFlag
                 }
                 else
                 {
-                    if (byPlayer.Entity.Controls.Sneak && byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(block)))
+                    var eastBlock = world.GetBlock(block.CodeWithVariant("side", "east"));
+                    if (byPlayer.Entity.Controls.Sneak && eastBlock != null && byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(eastBlock)))
                     {
                         var pole = world.BlockAccessor.GetBlock(new AssetLocation("cflag", "pole"));
                         world.BlockAccessor.ExchangeBlock(pole.Id, blockSel.Position);
@@ -49,6 +50,12 @@ namespace CFlag
                 }
             }
             return false;
+        }
+
+        public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos, ref EnumHandling handled)
+        {
+            handled = EnumHandling.PreventDefault;
+            return new ItemStack(world.BlockAccessor.GetBlock(block.CodeWithVariant("side", "east")));
         }
 
         private void tryFlipFlagUpwards(IWorldAccessor worldAccessor, BlockPos pos, float dt)
