@@ -79,13 +79,13 @@ namespace CFlag
             {
                 new WorldInteraction()
                 {
-                    ActionLangCode = "cflag-pole-upwards",
+                    ActionLangCode = "cflag:pole-upwards",
                     HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right
                 },
                 new WorldInteraction()
                 {
-                    ActionLangCode = "cflag-flag-pickup",
+                    ActionLangCode = "cflag:flag-pickup",
                     HotKeyCode = "sneak",
                     MouseButton = EnumMouseButton.Right
                 }
