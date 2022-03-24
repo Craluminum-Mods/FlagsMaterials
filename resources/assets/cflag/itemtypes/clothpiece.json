@@ -1,0 +1,62 @@
+{
+  "code": "clothp",
+  "shape": { "base": "item/clothpiece" },
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Quadrants",
+        "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.0247, "z2": 1 }
+      }
+    }
+  ],
+  "attributes": {
+    "displaycaseable": true,
+    "shelvable": true,
+    "onDisplayTransform": {
+      "rotation": { "x": 0, "y": -90, "z": 0 },
+      "origin": { "x": 0.5, "y": 0, "z": 0.5 }
+    }
+  },
+  "variantgroups": [
+    { "code": "size", "states": ["20", "24"] },
+    { "code": "color", "loadFromProperties": "cflag:clothcolor" }
+  ],
+  "creativeinventory": { "cflagm": ["*"] },
+  "maxstacksizeByType": {
+    "*-20-*": 640,
+    "*-24-*": 768
+  },
+  "materialDensity": 210,
+  "textures": {
+    "colorByType": {
+      "@.*-(dark|light).*": { "base": "extra/{color}" },
+      "*-plain": { "base": "game:block/cloth/linen/normal1" },
+      "*": { "base": "game:block/cloth/linen/{color}" }
+    }
+  },
+  "guiTransform": {
+    "rotate": true,
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 0, "y": 123, "z": -45 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "scale": 4
+  },
+  "fpHandTransform": {
+    "translation": { "x": 0.25, "y": 0, "z": -0.3 },
+    "rotation": { "x": 0, "y": 0, "z": 0 },
+    "origin": { "x": 0.6, "y": 0.3, "z": 0.5 },
+    "scale": 2.5
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.5, "y": -0.6, "z": 0 },
+    "rotation": { "x": 90, "y": 0, "z": 0 },
+    "scale": 1
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": 0 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5299 },
+    "scale": 4.5
+  }
+}

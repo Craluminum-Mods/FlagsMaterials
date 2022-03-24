@@ -1,0 +1,92 @@
+{
+  "editor": {
+    "allAngles": false,
+    "entityTextureMode": false
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {},
+  "textures": {
+    "madagascar1": "block/cloth/linen/white",
+    "madagascar2": "block/cloth/linen/red",
+    "madagascar3": "block/cloth/linen/green",
+    "pole": "block/liquid/dye/gray"
+  },
+  "elements": [
+    {
+      "name": "Cube2",
+      "from": [7.5, 0.0, 7.5],
+      "to": [8.5, 16.0, 8.5],
+      "rotationOrigin": [8.0, 0.0, 8.0],
+      "faces": {
+        "north": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 16.0], "windMode": [0, 0, 0, 0], "windData": [0, 1, 1, 0] },
+        "east": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 16.0], "windMode": [0, 0, 0, 0], "windData": [0, 1, 1, 0] },
+        "south": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 16.0], "windMode": [0, 0, 0, 0], "windData": [0, 0, 1, 1] },
+        "west": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 16.0], "windMode": [0, 0, 0, 0], "windData": [0, 0, 1, 1] },
+        "up": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 1.0], "windMode": [0, 0, 0, 0], "windData": [1, 1, 1, 1] },
+        "down": { "texture": "#pole", "uv": [0.0, 0.0, 1.0, 1.0], "windMode": [0, 0, 0, 0] }
+      },
+      "children": [
+        {
+          "name": "Cube1",
+          "from": [1.0, 4.0, 0.5],
+          "to": [16.0, 16.0, 0.5],
+          "rotationOrigin": [1.0, 10.0, 0.5],
+          "faces": {
+            "north": { "texture": "#pole", "uv": [0.0, 0.0, 15.0, 12.0], "enabled": false },
+            "east": { "texture": "#pole", "uv": [0.0, 0.0, 0.5, 12.0], "enabled": false },
+            "south": { "texture": "#pole", "uv": [0.0, 0.0, 15.0, 12.0], "enabled": false },
+            "west": { "texture": "#pole", "uv": [0.0, 0.0, 0.5, 12.0], "enabled": false },
+            "up": { "texture": "#pole", "uv": [0.0, 0.0, 15.0, 0.5], "enabled": false },
+            "down": { "texture": "#pole", "uv": [0.0, 0.0, 15.0, 0.5], "enabled": false }
+          },
+          "children": [
+            {
+              "name": "madagascar1",
+              "from": [0.0, 0.0, 0.0],
+              "to": [5.0, 12.0, 0.0],
+              "faces": {
+                "north": { "texture": "#madagascar1", "uv": [0.0, 0.0, 5.0, 12.0], "windMode": [0, 0, 3, 3], "windData": [0, 1, 1, 0] },
+                "east": { "texture": "#madagascar1", "uv": [0.0, 0.0, 0.5, 12.0], "enabled": false, "windMode": [3, 3, 3, 3], "windData": [0, 1, 1, 0] },
+                "south": { "texture": "#madagascar1", "uv": [0.0, 0.0, 5.0, 12.0], "windMode": [0, 3, 3, 0], "windData": [0, 0, 1, 1] },
+                "west": { "texture": "#madagascar1", "uv": [0.0, 0.0, 0.5, 12.0], "enabled": false, "windMode": [0, 0, 0, 0], "windData": [0, 0, 1, 1] },
+                "up": { "texture": "#madagascar1", "uv": [0.0, 0.0, 5.0, 0.5], "enabled": false, "windMode": [0, 0, 3, 3], "windData": [1, 1, 1, 1] },
+                "down": { "texture": "#madagascar1", "uv": [0.0, 0.0, 5.0, 0.5], "enabled": false, "windMode": [0, 3, 3, 0] }
+              },
+              "children": [
+                {
+                  "name": "madagascar2",
+                  "from": [5.0, 6.0, 0.0],
+                  "to": [15.0, 12.0, 0.0],
+                  "rotationOrigin": [5.0, 6.0, 0.0],
+                  "faces": {
+                    "north": { "texture": "#madagascar2", "uv": [0.0, 0.0, 10.0, 6.0], "windMode": [3, 3, 3, 3], "windData": [0, 1, 1, 0] },
+                    "east": { "texture": "#madagascar2", "uv": [0.0, 0.0, 0.5, 6.0], "enabled": false },
+                    "south": { "texture": "#madagascar2", "uv": [0.0, 0.0, 10.0, 6.0], "windMode": [3, 3, 3, 3], "windData": [0, 0, 1, 1] },
+                    "west": { "texture": "#madagascar2", "uv": [0.0, 0.0, 0.5, 6.0], "enabled": false },
+                    "up": { "texture": "#madagascar2", "uv": [0.0, 0.0, 10.0, 0.5], "enabled": false },
+                    "down": { "texture": "#madagascar2", "uv": [0.0, 0.0, 10.0, 0.5], "enabled": false }
+                  }
+                },
+                {
+                  "name": "madagascar3",
+                  "from": [5.0, 0.0, 0.0],
+                  "to": [15.0, 6.0, 0.0],
+                  "rotationOrigin": [5.0, 0.0, 0.0],
+                  "faces": {
+                    "north": { "texture": "#madagascar3", "uv": [0.0, 0.0, 10.0, 6.0], "windMode": [3, 3, 3, 3] },
+                    "east": { "texture": "#madagascar3", "uv": [0.0, 0.0, 0.5, 6.0], "enabled": false },
+                    "south": { "texture": "#madagascar3", "uv": [0.0, 0.0, 10.0, 6.0], "windMode": [3, 3, 3, 3] },
+                    "west": { "texture": "#madagascar3", "uv": [0.0, 0.0, 0.5, 6.0], "enabled": false },
+                    "up": { "texture": "#madagascar3", "uv": [0.0, 0.0, 10.0, 0.5], "enabled": false },
+                    "down": { "texture": "#madagascar3", "uv": [0.0, 0.0, 10.0, 0.5], "enabled": false }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

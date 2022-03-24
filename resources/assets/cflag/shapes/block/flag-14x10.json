@@ -1,0 +1,47 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 256,
+	"textureHeight": 192,
+	"textureSizes": {
+		"pole": [16,16],
+		"14x10": [256,192]
+	},
+	"textures": {
+		"pole": "block/liquid/dye/gray"
+	},
+	"elements": [
+		{
+			"name": "Cube1",
+			"from": [ 7.5, 0.0, 7.5 ], 
+			"to": [ 8.5, 16.0, 8.5 ], 
+			"rotationOrigin": [ 7.5, 0.0, 7.5 ],
+			"faces": {
+				"north": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+				"east": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+				"south": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+				"west": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 16.0 ] },
+				"up": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"down": { "texture": "#pole", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+			},
+			"children": [
+				{
+					"name": "14x10",
+					"from": [ 1.0, 6.0, 0.5 ], 
+					"to": [ 15.0, 16.0, 0.5 ], 
+					"rotationOrigin": [ 1.0, 11.0, 0.5 ],
+					"rotationX": 180.0,
+					"faces": {
+						"north": { "texture": "#14x10", "uv": [ 0.0, 0.0, 256.0, 192.0 ], "rotation": 180, "autoUv": false, "windMode": [0,0,3,3], "windData": [0,1,1,0] },
+						"east": { "texture": "#14x10", "uv": [ 0.0, 0.0, 0.5, 10.0 ], "enabled": false, "windMode": [3,3,3,3], "windData": [0,1,1,0] },
+						"south": { "texture": "#14x10", "uv": [ 0.0, 0.0, 256.0, 192.0 ], "autoUv": false, "windMode": [0,3,3,0], "windData": [0,0,1,1] },
+						"west": { "texture": "#14x10", "uv": [ 0.0, 0.0, 0.5, 10.0 ], "enabled": false, "windMode": [0,0,0,0], "windData": [0,0,1,1] },
+						"up": { "texture": "#14x10", "uv": [ 0.0, 0.0, 14.0, 0.5 ], "enabled": false, "windMode": [0,0,3,3], "windData": [1,1,1,1] },
+						"down": { "texture": "#14x10", "uv": [ 0.0, 0.0, 14.0, 0.5 ], "enabled": false, "windMode": [0,3,3,0] }
+					}
+				}
+			]
+		}
+	]}

@@ -1,9 +1,8 @@
 {
   "type": "code",
-  "modid": "cflag",
-  "name": "Why Flagpole",
-  "authors": ["Craluminum2413"],
-  "version": "1.0.0",
-  "dependencies": {
-  }
+  "modid": "materialsforflags",
+  "name": "Materials For Flags",
+  "description": "Materials used by Why Flags and Why Custom Flags mods.",
+  "authors": ["Craluminum2413", "G3rste"],
+  "version": "1.1.0"
 }

@@ -1,0 +1,37 @@
+[
+  {
+    "ingredientPattern": "PS",
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "clothp-24-*",
+        "name": "color",
+        "quantity": 24,
+        "allowedVariants": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"]
+      },
+      "S": { "type": "item", "code": "game:stick" }
+    },
+    "shapeless": true,
+    "width": 2,
+    "height": 1,
+    "output": { "type": "item", "code": "game:cloth-{color}" }
+  },
+
+  {
+    "ingredientPattern": "PS",
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "clothp-20-*",
+        "name": "color",
+        "quantity": 20,
+        "allowedVariants": ["plain", "blue", "red", "yellow", "green", "purple", "pink", "orange", "brown", "gray", "black", "white"]
+      },
+      "S": { "type": "item", "code": "game:stick" }
+    },
+    "shapeless": true,
+    "width": 2,
+    "height": 1,
+    "output": { "type": "item", "code": "game:cloth-{color}" }
+  }
+]

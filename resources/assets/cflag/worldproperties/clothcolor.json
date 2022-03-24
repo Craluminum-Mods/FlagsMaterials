@@ -1,0 +1,22 @@
+{
+  "__comment": "List of cloth colors",
+  "code": "clothcolor",
+  "variants": [
+    { "code": "black" },
+    { "code": "blue" },
+    { "code": "brown" },
+    { "code": "darkblue" },
+    { "code": "darkgreen" },
+    { "code": "gray" },
+    { "code": "green" },
+    { "code": "lightblue" },
+    { "code": "lightgreen" },
+    { "code": "orange" },
+    { "code": "pink" },
+    { "code": "plain" },
+    { "code": "purple" },
+    { "code": "red" },
+    { "code": "white" },
+    { "code": "yellow" }
+  ]
+}

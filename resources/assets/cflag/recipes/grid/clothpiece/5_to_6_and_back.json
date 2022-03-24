@@ -1,0 +1,24 @@
+[
+  {
+    "name": "1/24 cloth pieces to 1/20",
+    "ingredientPattern": "C",
+    "ingredients": {
+      "C": { "type": "item", "code": "clothp-24-*", "name": "color", "quantity": 6 }
+    },
+    "recipeGroup": 2,
+    "width": 1,
+    "height": 1,
+    "output": { "type": "item", "code": "clothp-20-{color}", "quantity": 5 }
+  },
+  {
+    "name": "1/20 cloth pieces to 1/24",
+    "ingredientPattern": "C",
+    "ingredients": {
+      "C": { "type": "item", "code": "clothp-20-*", "name": "color", "quantity": 5 }
+    },
+    "recipeGroup": 2,
+    "width": 1,
+    "height": 1,
+    "output": { "type": "item", "code": "clothp-24-{color}", "quantity": 6 }
+  }
+]

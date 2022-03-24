@@ -1,0 +1,13 @@
+[
+  {
+    "name": "1/24 cloth pieces",
+    "ingredientPattern": "TC",
+    "ingredients": {
+      "C": { "type": "item", "code": "game:cloth-*", "name": "color" },
+      "T": { "type": "item", "code": "game:shears-*", "isTool": true }
+    },
+    "width": 1,
+    "height": 2,
+    "output": { "type": "item", "code": "clothp-24-{color}", "quantity": 24 }
+  }
+]
