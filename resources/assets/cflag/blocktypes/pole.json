@@ -6,7 +6,7 @@
   "maxStackSize": 8,
   "shape": { "base": "block/pole" },
   "textures": { "pole": { "base": "game:block/liquid/dye/gray" } },
-  "creativeinventory": { "cflagm": ["*"] },
+  "creativeinventory": { "cflag": ["*"] },
   "behaviors": [{ "name": "BlockPole" }],
   "lightAbsorption": 0,
   "resistance": 0.5,

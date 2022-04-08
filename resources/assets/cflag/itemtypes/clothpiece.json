@@ -22,7 +22,7 @@
     { "code": "size", "states": ["20", "24"] },
     { "code": "color", "loadFromProperties": "cflag:clothcolor" }
   ],
-  "creativeinventory": { "cflagm": ["*"] },
+  "creativeinventory": { "cflag": ["*"] },
   "maxstacksizeByType": {
     "*-20-*": 640,
     "*-24-*": 768
