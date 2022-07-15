@@ -42,6 +42,9 @@
   "item-clothp-24-white": "White cloth piece (1/24)",
   "item-clothp-24-yellow": "Yellow cloth piece (1/24)",
   "itemdesc-clothp-20-*": "Used to make flags with 2, 4, 5, 10 or 20 colors.\n5 pieces can be converted into 6 pieces 1/24",
+  "h2color-blue-yellow-dsc": "Can be used as a flag of Ukraine",
+  "h2color-white-red-dsc": "Can be used as a flag of Poland",
+  "h2color-red-white-dsc": "Can be used as a flag of Indonesia",
 
   "country-ad": "Andorra",
   "country-ae": "United Arab Emirates",
