@@ -6,11 +6,11 @@
 	"textureWidth": 160,
 	"textureHeight": 80,
 	"textureSizes": {
-		"16x8": [160,80],
+		"main": [160,80],
 		"pole": [16,16]
 	},
 	"textures": {
-		"pole": "block/liquid/dye/gray"
+		"main": "block/cloth/linen/blue"
 	},
 	"elements": [
 		{
@@ -42,17 +42,17 @@
 					},
 					"children": [
 						{
-							"name": "16x8",
+							"name": "main",
 							"from": [ 0.0, 4.0, 0.0 ], 
 							"to": [ 16.0, 12.0, 0.0 ], 
 							"rotationOrigin": [ 0.0, 4.0, 0.0 ],
 							"faces": {
-								"north": { "texture": "#16x8", "uv": [ 0.0, 0.0, 160.0, 80.0 ], "autoUv": false, "windMode": [0,0,3,3], "windData": [0,1,1,0] },
-								"east": { "texture": "#16x8", "uv": [ 0.0, 0.0, 1.0, 8.0 ], "enabled": false, "windMode": [3,3,3,3], "windData": [0,1,1,0] },
-								"south": { "texture": "#16x8", "uv": [ 0.0, 0.0, 160.0, 80.0 ], "autoUv": false, "windMode": [0,3,3,0], "windData": [0,0,1,1] },
-								"west": { "texture": "#16x8", "uv": [ 0.0, 0.0, 1.0, 8.0 ], "enabled": false, "windMode": [0,0,0,0], "windData": [0,0,1,1] },
-								"up": { "texture": "#16x8", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false, "windMode": [0,0,3,3], "windData": [1,1,1,1] },
-								"down": { "texture": "#16x8", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false, "windMode": [0,3,3,0] }
+								"north": { "texture": "#main", "uv": [ 0.0, 0.0, 160.0, 80.0 ], "autoUv": false, "windMode": [0,0,3,3], "windData": [0,1,1,0] },
+								"east": { "texture": "#main", "uv": [ 0.0, 0.0, 1.0, 8.0 ], "enabled": false, "windMode": [3,3,3,3], "windData": [0,1,1,0] },
+								"south": { "texture": "#main", "uv": [ 0.0, 0.0, 160.0, 80.0 ], "autoUv": false, "windMode": [0,3,3,0], "windData": [0,0,1,1] },
+								"west": { "texture": "#main", "uv": [ 0.0, 0.0, 1.0, 8.0 ], "enabled": false, "windMode": [0,0,0,0], "windData": [0,0,1,1] },
+								"up": { "texture": "#main", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false, "windMode": [0,0,3,3], "windData": [1,1,1,1] },
+								"down": { "texture": "#main", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false, "windMode": [0,3,3,0] }
 							}
 						}
 					]
