@@ -26,6 +26,12 @@
         "color": "game:block/cloth/linen/"
       }
     },
+    "handbook": {
+      "excludeByType": {
+        "*-country": false,
+        "*": true
+      }
+    },
     "variantGroups": {
       "country": [
         "ad",
