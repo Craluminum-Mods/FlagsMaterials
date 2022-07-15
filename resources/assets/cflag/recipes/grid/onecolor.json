@@ -1,0 +1,9 @@
+{
+  "ingredientPattern": "FF,FF",
+  "ingredients": {
+    "F": { "type": "item", "code": "clothp-20-*", "name": "color", "quantity": 5 }
+  },
+  "width": 2,
+  "height": 2,
+  "output": { "type": "item", "code": "itemflag-16x8-onecolor", "attributes": { "onecolor": "{color}" } }
+}
