@@ -1,5 +1,8 @@
 using Vintagestory.API.Common;
 
+[assembly: ModInfo("CR Flags",
+    Authors = new[] { "Craluminum2413" })]
+
 namespace CFlag
 {
     public class CFlag : ModSystem
@@ -8,6 +11,7 @@ namespace CFlag
         {
             base.Start(api);
 
+            api.RegisterItemClass("CFItemFlag", typeof(CFItemFlag));
             api.RegisterBlockBehaviorClass("BlockFlag", typeof(BlockBehaviorFlag));
             api.RegisterBlockBehaviorClass("BlockPole", typeof(BlockBehaviorPole));
         }
