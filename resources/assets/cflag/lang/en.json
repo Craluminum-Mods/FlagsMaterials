@@ -1,6 +1,7 @@
 {
   "game:tabname-cflag": "Flags",
 
+  "flag": "Flag",
   "block-pole": "Flagpole",
   "flag-pickup": "Remove the flag",
   "pole-addflag": "Add a flag",
